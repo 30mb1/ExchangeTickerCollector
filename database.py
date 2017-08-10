@@ -28,6 +28,7 @@ class Data(object):
         if cur_setup == None:
             return template
         else:
+            cur_setup.pop('_id')
             return cur_setup
 
     def remove(self, pair, exchanges):
@@ -45,4 +46,16 @@ class Data(object):
                 {
                     '$set' : cur_setup
                 }
+            )
+
+    def insert_tick(self, tick):
+        self.database['tickers'].insert_one(
+            tick
+        )
+
+    def clean(self):
+        cur_setup = self.database['setup'].find_one()
+        if cur_setup != None:
+            self.database['setup'].delete_one(
+                cur_setup
             )
