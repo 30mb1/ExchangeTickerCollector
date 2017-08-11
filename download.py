@@ -29,6 +29,7 @@ client.upload_file(tmp, bucket_name, data_name)
 
 
 presigned_url = client.generate_presigned_url('get_object', Params = {'Bucket': 'exchangestat', 'Key': data_name})
+print ('Your link for downloading: ')
 print (presigned_url)
 
 db.del_tickers()
