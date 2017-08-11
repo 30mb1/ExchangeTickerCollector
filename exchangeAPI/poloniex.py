@@ -33,6 +33,6 @@ class Poloniex(object):
             if ret.status_code != 200:
                 return 0
             ret = ret.json()[pair]
-            return [ret['highestBid'], ret['lowestAsk']]
+            return [float(ret['highestBid']), float(ret['lowestAsk'])]
         except:
             return 0

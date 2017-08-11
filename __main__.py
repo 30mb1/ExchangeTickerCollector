@@ -86,7 +86,7 @@ if __name__ == '__main__':
             command = input().strip()
             command_handler(command)
         except KeyboardInterrupt:
-            print ('Stopping collecting processes...')
+            print ('Turning bot off...')
             db = Data()
             db.clean()
             if len(proc) != 0:

@@ -18,7 +18,7 @@ def start_collecting():
     while True:
         result_dict = {}
         _from = time.time()
-        result_dict['time'] = time.strftime("%Y:%m:%d - %H:%M:%S")
+        result_dict['time'] = time.strftime("%Y.%m.%d - %H:%M:%S")
         cur_setup = db.get_cur_setup()
         list_ = []
         for key, item in cur_setup.items():

@@ -34,6 +34,6 @@ class Bitfinex(object):
             if ret.status_code != 200:
                 return 0
             ret = ret.json()
-            return [ret['bid'], ret['ask']]
+            return [float(ret['bid']), float(ret['ask'])]
         except:
             return 0

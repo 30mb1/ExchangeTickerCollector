@@ -36,6 +36,6 @@ class Gdax(object):
             if ret.status_code != 200:
                 return 0
             ret = ret.json()
-            return [ret["bids"][0][0], ret["asks"][0][0]]
+            return [float(ret["bids"][0][0]), float(ret["asks"][0][0])]
         except:
             return 0

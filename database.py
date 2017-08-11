@@ -53,6 +53,11 @@ class Data(object):
             tick
         )
 
+    def get_tickers(self):
+        tickers = self.database['tickers'].find()
+        return tickers
+
+
     def clean(self):
         cur_setup = self.database['setup'].find_one()
         if cur_setup != None:
