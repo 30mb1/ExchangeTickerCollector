@@ -19,6 +19,7 @@ for ticker in coursor:
 
 data_name = _from[:10] + ' - ' + last[:10] + '.json'
 tmp = 'tickers/' + data_name
+
 with open(tmp, 'w') as outfile:
     json.dump(res_dict, outfile)
 
@@ -29,3 +30,5 @@ client.upload_file(tmp, bucket_name, data_name)
 
 presigned_url = client.generate_presigned_url('get_object', Params = {'Bucket': 'exchangestat', 'Key': data_name})
 print (presigned_url)
+
+db.del_tickers()

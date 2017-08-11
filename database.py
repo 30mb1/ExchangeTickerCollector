@@ -57,6 +57,8 @@ class Data(object):
         tickers = self.database['tickers'].find()
         return tickers
 
+    def del_tickers(self):
+        self.database['tickers'].delete_many({})
 
     def clean(self):
         cur_setup = self.database['setup'].find_one()

@@ -24,7 +24,6 @@ def start_collecting():
         for key, item in cur_setup.items():
             list_.append([key, item])
         pool = ThreadPool(5)
-        #print (list_)
         ret = pool.map(do_func, list_)
         for jdx, item in enumerate(list_):
             tmp_dict = {}
@@ -32,12 +31,11 @@ def start_collecting():
                 tmp_dict[pair] = ret[jdx][idx]
             result_dict[item[0]] = tmp_dict
 
-        print (result_dict)
+        #print (result_dict)
         db.insert_tick(result_dict)
         end_time = time.time() - _from
         if end_time < 1:
             time.sleep(1 - end_time)
-            print ('sleeping for ', 1 - end_time)
 
 def stop_collecting(process):
     process.terminate()
