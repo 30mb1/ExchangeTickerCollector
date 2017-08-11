@@ -9,7 +9,6 @@ configobj==5.0.6
 docutils==0.14
 idna==2.5
 jmespath==0.9.3
-pkg-resources==0.0.0
 prompt-toolkit==1.0.15
 pyasn1==0.3.2
 Pygments==2.2.0
