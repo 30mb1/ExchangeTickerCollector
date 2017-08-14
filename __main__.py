@@ -17,7 +17,8 @@ proc = []
 def command_handler(command):
     command = command.split(' ')
     if command[0] == '/help':
-        print (help_message)
+        print (utility.help_message)
+        utility.wtf()
         return
 
     if command[0] == '/add':
