@@ -31,7 +31,7 @@ client = boto3.client('s3', region_name='us-east-2')
 response = client.list_buckets()
 buckets = [bucket['Name'] for bucket in response['Buckets']]
 
-bucket_name = 'exchangedata'
+bucket_name = 'ExchangeStatistics'
 if bucket_name not in buckets:
     client.create_bucket(Bucket=bucket_name, CreateBucketConfiguration={
         'LocationConstraint': 'us-east-2'
