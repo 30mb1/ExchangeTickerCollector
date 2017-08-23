@@ -25,6 +25,8 @@ def start_collecting():
             list_.append([key, item])
         pool = ThreadPool(5)
         ret = pool.map(do_func, list_)
+        pool.terminate()
+        pool.join()
         for jdx, item in enumerate(list_):
             tmp_dict = {}
             for idx, pair in enumerate(item[1]):
