@@ -11,6 +11,8 @@ def do_func(arg_list):
         return 0
     pool = ThreadPool(len(pairs))
     ret = pool.map(exchange.get_quotation, pairs)
+    ret.terminate()
+    ret.join()
     return ret
 
 def start_collecting():
