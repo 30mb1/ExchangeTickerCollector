@@ -29,7 +29,7 @@ class Poloniex(object):
     def get_quotation(pair):
         pair = pair.replace('USD', 'USDT')
         try:
-            ret = requests.get('https://poloniex.com/public?command=returnTicker', timeout=0.9)
+            ret = requests.get('https://poloniex.com/public?command=returnTicker', timeout=0.8)
             if ret.status_code != 200:
                 return 0
             ret = ret.json()[pair]

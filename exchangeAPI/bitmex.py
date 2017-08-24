@@ -26,7 +26,7 @@ class Bitmex(object):
     @staticmethod
     def get_quotation(pair):
         try:
-            ret = requests.get('https://www.bitmex.com/api/v1/quote?symbol=' + Bitmex.allowed_pairs[pair] + '&count=1&reverse=true', timeout=0.9)
+            ret = requests.get('https://www.bitmex.com/api/v1/quote?symbol=' + Bitmex.allowed_pairs[pair] + '&count=1&reverse=true', timeout=0.8)
             if ret.status_code != 200:
                 return 0
             ret = ret.json()[0]

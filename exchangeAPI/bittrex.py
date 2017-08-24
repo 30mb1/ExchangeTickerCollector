@@ -34,7 +34,7 @@ class Bittrex(object):
         pair = pair.replace('USD', 'USDT')
         pair = pair.replace('_', '-')
         try:
-            ret = requests.get('https://bittrex.com/api/v1.1/public/getticker?market=' + pair, timeout=0.9)
+            ret = requests.get('https://bittrex.com/api/v1.1/public/getticker?market=' + pair, timeout=0.8)
             if ret.status_code != 200:
                 return 0
             ret = ret.json()['result']
