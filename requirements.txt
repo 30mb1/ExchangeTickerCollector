@@ -11,7 +11,7 @@ idna==2.5
 jmespath==0.9.3
 prompt-toolkit==1.0.15
 pyasn1==0.3.2
-Pygments==2.2.0
+Pygments==2.7.4
 pymongo==3.5.0
 python-dateutil==2.6.1
 PyYAML==3.12
